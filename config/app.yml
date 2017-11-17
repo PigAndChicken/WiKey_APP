@@ -1,0 +1,5 @@
+---
+development:
+  api_url: https://wikeyapi.herokuapp.com/
+test:
+  api_url: https://wikeyapi.herokuapp.com/
