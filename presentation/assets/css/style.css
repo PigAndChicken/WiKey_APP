@@ -1,0 +1,25 @@
+h1 {
+  font-weight: bold;
+}
+
+.query-bar {
+  background-color: #EEEEEE;
+  padding: 5px 5px 5px 5px;
+}
+
+.blank-row {
+  height: 30px;
+}
+
+.sidebar {
+  width: 40px;
+  float: right;
+  height: 200px;
+  background-color: #EEEEEE;
+}
+
+footer {
+  padding: 0.5in;
+  font-size: 11px;
+  color: #646464;
+}

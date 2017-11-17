@@ -1,0 +1,22 @@
+.container
+  form role="form" action="/article" method='post' id='add-article-form'
+    .row.vertical-align.query-bar
+      .col-xs-8 
+        input{
+          type='text' name='topic'
+          id='topic_input' class="form-control"
+          placeholder="Enter the topic of wikipedia here"
+        }
+      .col-xs-2
+        button{
+          type='submit' id='topic-form-submit' class='submit'
+          value='submit' class="btn btn-info"
+        } + Search
+      .row
+        .col-xs-10.blank-row
+.container
+  div class="span2 sidebar"
+    h3
+      Category
+    ul class="nav nav-tabs nav-stacked"
+    .list-unstyled

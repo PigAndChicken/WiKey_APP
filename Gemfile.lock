@@ -1,0 +1,24 @@
+GEM
+  specs:
+    econfig (2.0.0)
+    puma (3.10.0)
+    rack (2.0.3)
+    roda (3.1.0)
+      rack
+    slim (3.0.9)
+      temple (>= 0.7.6, < 0.9)
+      tilt (>= 1.3.3, < 2.1)
+    temple (0.8.0)
+    tilt (2.0.8)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  econfig
+  puma
+  roda
+  slim
+
+BUNDLED WITH
+   1.16.0.pre.3
