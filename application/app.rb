@@ -10,11 +10,11 @@ module WiKey
     route do |routing|
       routing.assets
       app = App
-
+      
+      # GET request
       routing.root do
         view 'home'
       end
-
     end
   end
 end
