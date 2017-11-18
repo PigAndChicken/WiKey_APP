@@ -6,16 +6,16 @@ module WiKey
       @config = config
     end
 
-    def all_articles
+    def all_topics
       call_api(:get, 'topic')
     end
 
-    def article(topic)
-      call_api(:get, ['topic', topic])
+    def topic(topic_name)
+      call_api(:get, ['topic', topic_name])
     end
 
-    def create_article(topic)
-      call_api(:post, ['topic', topic])
+    def create_topic(topic_name)
+      call_api(:post, ['topic', topic_name])
     end
 
     def call_api(method, resources)
