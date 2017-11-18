@@ -3,6 +3,8 @@ GEM
   specs:
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
+    declarative (0.0.10)
+    declarative-option (0.1.0)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
     econfig (2.0.0)
@@ -15,9 +17,16 @@ GEM
       domain_name (~> 0.5)
     http-form_data (2.0.0)
     http_parser.rb (0.6.0)
+    multi_json (1.12.2)
     public_suffix (3.0.0)
     puma (3.10.0)
     rack (2.0.3)
+    representable (3.0.4)
+      declarative (< 0.1.0)
+      declarative-option (< 0.2.0)
+      uber (< 0.2.0)
+    roar (1.1.0)
+      representable (~> 3.0.0)
     roda (3.1.0)
       rack
     slim (3.0.9)
@@ -25,6 +34,7 @@ GEM
       tilt (>= 1.3.3, < 2.1)
     temple (0.8.0)
     tilt (2.0.8)
+    uber (0.1.0)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.4)
@@ -35,7 +45,9 @@ PLATFORMS
 DEPENDENCIES
   econfig
   http
+  multi_json
   puma
+  roar
   roda
   slim
 

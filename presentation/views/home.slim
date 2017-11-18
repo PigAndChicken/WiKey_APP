@@ -1,7 +1,8 @@
 .container
-  form role="form" action="/article" method='post' id='add-article-form'
-    .row.vertical-align.query-bar
-      .col-xs-8 
+  / searching bar
+  form role="form" action="/topic" method='post' id='add-topic-form'
+    .row.vertical-align.query-bar.col-xs-12
+      .col-xs-9
         input{
           type='text' name='topic'
           id='topic_input' class="form-control"
@@ -10,13 +11,30 @@
       .col-xs-2
         button{
           type='submit' id='topic-form-submit' class='submit'
-          value='submit' class="btn btn-info"
-        } + Search
-      .row
-        .col-xs-10.blank-row
-.container
-  div class="span2 sidebar"
-    h3
-      Category
-    ul class="nav nav-tabs nav-stacked"
-    .list-unstyled
+          value='submit' class="btn"
+        } Search
+
+  / content body
+  section
+    .row
+    .row
+      h3 id="list_title" Overview
+    .col-md-8
+      p id="content_block"
+        ll In 1955, the President of Tsinghua University in Beijing, Mei Yi-chi left and re-established the National Tsing Hua Institute of Nuclear Technology in Hsinchu city, and later based on the foundation of the original institute, National Tsing Hua University was founded in Taiwan. The two Tsinghua universities both claim to be successors of the original Tsinghua University. As a result of this dispute, the universities claimed to be the rightful recipient of the funds from the Boxer Rebellion indemnity that was used to start Tsinghua University. This indemnity was transferred to the university in Taiwan after the Nationalist government (Kuomintang) retreated to Taiwan. Today, both Tsinghua universities have deep mutual cooperation, including an establishment of Tsinghua Strait Research Institute, dual degree program, MOOC program, and academic exchange program.
+  
+  / directory
+  section
+    .col-md-4 id="list"
+      .panel-default
+        .panel-heading Contents
+        ul class="list-group"
+          li.list-group-item - Overview
+          li.list-group-item - History
+          li.list-group-item - Tradition
+          li.list-group-item - Campus life
+          li.list-group-item - Academics
+          li.list-group-item - Presidents
+          li.list-group-item - Rankings
+          li.list-group-item - Notable alumni
+          li.list-group-item - See also
