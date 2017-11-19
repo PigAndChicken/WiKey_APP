@@ -37,15 +37,20 @@ module WiKey
       end
       
       routing.on 'topic' do
+
         routing.post do
           topic_name = routing.params['topic']
-          topic_info = ApiGateway.new.create_topic(topic_name)
-
+          topic_info = ApiGateway.new.topic(topic_name)
           topic_info = JSON.parse topic_info
+          if topic_info.keys.include?('error')
+            topic_info = ApiGateway.new.create_topic(topic_name)
+            topic_info = JSON.parse topic_info
+          end
+          
           view 'home', locals: { home: false, topic: topic_info['topic'], catalogs: topic_info['catalogs'], paragraphs: topic_info['paragraphs'].map{ |p| p['content'] }.flatten.join("\n\n") }
         end
+        
       end
-      
     end
   end
 end
