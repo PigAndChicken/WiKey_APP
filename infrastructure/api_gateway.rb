@@ -7,7 +7,7 @@ module WiKey
     end
 
     def all_topics
-      call_api(:get, 'topic')
+      call_api(:get, 'topics')
     end
 
     def topic(topic_name)
@@ -16,6 +16,10 @@ module WiKey
 
     def create_topic(topic_name)
       call_api(:post, ['topic', topic_name])
+    end
+    
+    def paragraph(topic_name, catalog_name)
+      call_api(:get, ['paragraphs', topic_name, catalog_name])
     end
 
     def call_api(method, resources)

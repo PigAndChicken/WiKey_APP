@@ -3,7 +3,11 @@ h1 {
 }
 
 h3 {
-  color: gray;
+  color: #AC9999;
+}
+
+h4 {
+  color: #C1C1C1;
 }
 
 .query-bar {
@@ -15,8 +19,6 @@ h3 {
   color: #FFFFFF;
   background-color: #C1C1C1;
 }
-
-
 
 #content_block {
   float: left;
