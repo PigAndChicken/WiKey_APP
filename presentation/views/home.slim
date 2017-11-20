@@ -19,27 +19,25 @@
     .row
     .row
       - if home
-        h3 Welcome
+        h3 id="welcome" Welcome
       - else
-        h3 #{topic['name']}
+        h3
+          = subject_contents.topic
     .col-md-8
       - if home
-        p
+        p id="introduction"
           | Welcome to WiKey
       - else
           p
-            = "#{paragraphs}"
+            = subject_contents.paragraph
 
   / directory
   section
     .col-md-4 id="list"
       .panel-default
-      
-        .panel-heading = home ? 'Topics' : 'Catalog' 
+       - unless home
+        .panel-heading Outline
         div class="list-group"
-           - if home
-            - topics.each do |topic| 
-              a href="/catalogs/#{topic["name"]}"  class="list-group-item"  #{topic["name"]}
-           - else
-            - catalogs.each do |c|
-             a href="/paragraphs/#{topic["name"]}/#{c['name']}"  class="list-group-item"  #{c['name']}
+           - unless home
+            - catalogs.each do |catalog|
+              a href=subject_contents.link_to_topic_paragraph  class="list-group-item"  #{catalog}

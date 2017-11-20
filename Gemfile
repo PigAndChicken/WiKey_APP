@@ -15,17 +15,21 @@ gem 'roda'
 gem 'slim'
 
 # Representers
+gem 'dry-validation'
 gem 'roar'
 gem 'multi_json'
+
+# Services
+gem 'dry-monads'
+gem 'dry-transaction'
 
 group :test do
   gem 'minitest'
   gem 'minitest-rg'
   gem 'rack-test'
-  gem 'rake'
-  gem 'simplecov'
-  gem 'vcr'
-  gem 'webmock'
+  
+  gem 'headless'
+  gem 'watir'
 end
 
 group :development, :test do
@@ -34,4 +38,9 @@ group :development, :test do
   gem 'flog'
   gem 'reek'
   gem 'rubocop'
+end
+
+# bundle install --without production
+group :production do
+  gem 'pg'
 end
