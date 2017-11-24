@@ -7,7 +7,7 @@ module WiKey
       end
       
       def topic
-        @topic = @topic_info['topic']['name']  #"topic_name"
+        @topic_info['topic']['name']  #"topic_name"
       end
       
       def catalogs
@@ -15,11 +15,11 @@ module WiKey
       end
       
       def catalog
-        @topic_info['paragraphs'][0]['catalog']
+        @topic_info['paragraphs'][0]['catalog']  #"catalog_name"
       end
       
       def paragraph
-        @topic_info['paragraphs'].map{ |p| p['content'] }.flatten.join("\n\n")  #"paragraph"
+        @topic_info['paragraphs'].map { |p| p["content"] }  #[p1, p2, p3]
       end
       
       def link_to_topic_paragraph

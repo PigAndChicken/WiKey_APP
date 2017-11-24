@@ -28,9 +28,10 @@
         p id="introduction"
           | Welcome to WiKey
       - else
-          p
-            = subject_contents.paragraph
-
+        - subject_contents.paragraph.each do |paragraph|
+           p 
+           =  paragraph
+              
   / directory
   section
     .col-md-4 id="list"
@@ -39,5 +40,6 @@
         .panel-heading Outline
         div class="list-group"
            - unless home
-            - catalogs.each do |catalog|
-              a href=subject_contents.link_to_topic_paragraph  class="list-group-item"  #{catalog}
+            - subject_contents.catalogs.each do |catalog|
+                class="list-group-item"
+                  a href=subject_contents.link_to_topic_paragraph  #{catalog}
