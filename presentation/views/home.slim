@@ -21,25 +21,25 @@
       - if home
         h3 id="welcome" Welcome
       - else
-        h3
+        h3 id='subtitle'
           = subject_contents.topic
     .col-md-8
       - if home
         p id="introduction"
-          | Welcome to WiKey
+          | WiKey is a simple tool for summarize contents of wikipedia. Let's try some topics of wikipedia!
       - else
-        - subject_contents.paragraph.each do |paragraph|
-           p 
-           =  paragraph
+        - subject_contents.summaries.each do |summary|
+           p id="summary"
+           =  summary
               
   / directory
   section
     .col-md-4 id="list"
       .panel-default
        - unless home
-        .panel-heading Outline
-        div class="list-group"
+        .panel-heading id="list_title" Outline
+        div class="list-group" id="outline"
            - unless home
             - subject_contents.catalogs.each do |catalog|
-                class="list-group-item"
-                  a href=subject_contents.link_to_topic_paragraph  #{catalog}
+                div class="list-group-item"
+                  a href="/summaries/#{subject_contents.topic}/#{catalog}"  #{catalog}

@@ -18,15 +18,14 @@ module WiKey
       call_api(:post, ['topic', topic_name])
     end
     
-    def paragraph(topic_name, catalog_name)
-      call_api(:get, ['paragraphs', topic_name, catalog_name])
+    def summaries(topic_name, catalog_name)
+      call_api(:get, ['summaries', topic_name, catalog_name])
     end
 
     def call_api(method, resources)
       url_route = [@config.api_url, resources].flatten.join'/'
 
       result = HTTP.send(method, url_route)
-#      raise(result.to_s) if result.code >= 300
       result.to_s
     end
   end

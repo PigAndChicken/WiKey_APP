@@ -7,7 +7,7 @@ module WiKey
       end
       
       def topic
-        @topic.topic.name
+        @topic.topic
       end
       
       def link_to_topic_default

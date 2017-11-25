@@ -1,4 +1,4 @@
-folders = %w[representers views]
+folders = %w[representers services views]
 folders.each do |folder|
   require_relative "#{folder}/init.rb"
 end
