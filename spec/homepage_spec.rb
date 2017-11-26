@@ -3,6 +3,8 @@ require_relative 'spec_helper'
 describe 'Homepage' do
   before do
     unless @browser
+#      caps = Selenium::WebDriver::Remote::Capabilities.chrome("chromeOptions" => {"binary" => "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"})
+#      Selenium::WebDriver.for :chrome, desired_capabilities: caps
       @headless = Headless.new
       @browser = Watir::Browser.new
     end
