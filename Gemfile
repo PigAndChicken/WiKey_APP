@@ -42,3 +42,8 @@ group :development do
   gem 'reek'
   gem 'rubocop'
 end
+
+# bundle install --without production
+group :production do
+  gem 'pg'
+end
