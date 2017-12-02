@@ -1,7 +1,9 @@
 ---
 development:
   api_url: https://wikeyapi.herokuapp.com/api/v0.1
+  APP_URL: http://localhost:9292  ##暫
 test:
   api_url: https://wikeyapi.herokuapp.com/api/v0.1
+  APP_URL: http://localhost:9292
 production:
   api_url: https://wikeyapi.herokuapp.com/api/v0.1

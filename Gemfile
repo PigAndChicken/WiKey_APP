@@ -16,8 +16,8 @@ gem 'slim'
 
 # Representers
 gem 'dry-validation'
-gem 'roar'
 gem 'multi_json'
+gem 'roar'
 
 # Services
 gem 'dry-monads'
@@ -27,21 +27,17 @@ group :test do
   gem 'minitest'
   gem 'minitest-rg'
   gem 'rack-test'
-  
-  gem 'headless'
-  gem 'watir'
+
   gem 'chromedriver-helper', '~> 1.0'
+  gem 'headless'
+  gem 'page-object'
+  gem 'watir'
 end
 
-group :development, :test do
+group :development do
   gem 'rerun'
 
   gem 'flog'
   gem 'reek'
   gem 'rubocop'
-end
-
-# bundle install --without production
-group :production do
-  gem 'pg'
 end
