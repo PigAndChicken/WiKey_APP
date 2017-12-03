@@ -1,25 +1,51 @@
-h1 {
+#main_header {
   font-weight: bold;
 }
 
+#subtitle {
+  color: #AC9999;
+}
+
+#welcome {
+  color: #AC9999;
+  text-align: center;
+}
+
+#introduction {
+  text-align: center;
+}
+
+h4 {
+  color: #C1C1C1;
+}
+
 .query-bar {
-  background-color: #EEEEEE;
-  padding: 5px 5px 5px 5px;
+  background-color: #FFFFE6;
+  padding: 20px 20px 20px 20px;
 }
 
-.blank-row {
-  height: 30px;
+.btn {
+  color: #FFFFFF;
+  background-color: #C1C1C1;
 }
 
-.sidebar {
-  width: 40px;
+#content_block {
+  float: left;
+  padding: 20px;
+}
+
+#list {
   float: right;
-  height: 200px;
-  background-color: #EEEEEE;
+  padding-right: 25px;
+}
+
+a {
+  color: #AC9999;
 }
 
 footer {
+  text-align: center;
   padding: 0.5in;
   font-size: 11px;
-  color: #646464;
+  color: #AC9999;
 }

@@ -1,7 +1,8 @@
 .container
-  form role="form" action="/article" method='post' id='add-article-form'
-    .row.vertical-align.query-bar
-      .col-xs-8 
+  / searching bar
+  form role="form" action="/article" method='post' id='add-topic-form'
+    .row.vertical-align.query-bar.col-xs-12
+      .col-xs-9
         input{
           type='text' name='topic'
           id='topic_input' class="form-control"
@@ -9,14 +10,34 @@
         }
       .col-xs-2
         button{
-          type='submit' id='topic-form-submit' class='submit'
-          value='submit' class="btn btn-info"
-        } + Search
-      .row
-        .col-xs-10.blank-row
-.container
-  div class="span2 sidebar"
-    h3
-      Category
-    ul class="nav nav-tabs nav-stacked"
-    .list-unstyled
+          type='submit' id='topic_submit' class='submit'
+          value='submit' class="btn"
+        } Search
+
+  / content body
+  section
+    .row
+    .row
+      - if home
+        h3 id="welcome" Welcome
+      - elsif !subject_contents.nil?
+        h3 id='subtitle'
+          = subject_contents.topic
+    .col-md-8
+      - if home
+        p id="introduction"
+          | WiKey is a simple tool for summarize contents of wikipedia. Let's try some topics of wikipedia!
+      - elsif !subject_contents.nil?
+        - subject_contents.paragraphs.each do |summary|
+           p id="summary"
+           =  summary.content
+  / directory
+  section
+    .col-md-4 id="list"
+      .panel-default
+       - if !home && !subject_contents.nil?
+        .panel-heading id="list_title" Outline
+        div class="list-group" id="outline"
+            - subject_contents.catalog_collection.each do |subject|
+                div class="list-group-item"
+                  a href="#{subject.link_to_summaries}"  #{subject.catalog}
