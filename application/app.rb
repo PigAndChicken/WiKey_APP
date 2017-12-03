@@ -24,6 +24,7 @@ module WiKey
         view 'home', locals: { home: true, subjects: subjects }
       end
 
+      # GET /api/v0.1/summaries/{topic_name}/{catalog_name}
       routing.on 'summaries', String, String do |topic_name, catalog_name|
         routing.get do
           topic_info = ApiGateway.new.summaries(topic_name, catalog_name)
@@ -37,27 +38,30 @@ module WiKey
       end
 
       routing.on 'topic' do
-        routing.post do
+        # GET /api/v0.1/topic/{topic_name}
+        routing.get do
           topic_name = routing.params['topic']
           topic_info = ApiGateway.new.topic(topic_name)
           topic_info = ArticleRepresenter.new(OpenStruct.new)
                                          .from_json topic_info
+          subject_contents = Views::SubjectContents.new(topic_info)
+          view 'home', locals: { home: false,
+                                 subject_contents: subject_contents }
+        end
 
-          if topic_info.topic.nil?
-            result = CreateTopic.new.call(topic_name)
-            if result.failure?
-              flash[:error] = 'Not exists in Wikipedia'
-              routing.redirect '/'
-            else
-              topic_info = result.value
-            end
+        # POST /api/v0.1/topic/{topic_name}
+        routing.post do
+          topic_name = routing.params['topic']
+          result = CreateTopic.new.call(topic_name)
+          if result.failure?
+            flash[:error] = 'Not exists in Wikipedia'
+            routing.redirect '/'
+          else
+            topic_info = result.value
           end
-
-          unless topic_info.topic.nil?
-            subject_contents = Views::SubjectContents.new(topic_info)
-            view 'home', locals: { home: false,
-                                   subject_contents: subject_contents }
-          end
+          subject_contents = Views::SubjectContents.new(topic_info)
+          view 'home', locals: { home: false,
+                                 subject_contents: subject_contents }
         end
       end
     end
