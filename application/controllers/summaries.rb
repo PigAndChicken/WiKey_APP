@@ -1,7 +1,7 @@
 module WiKey
   # Web App
   class App < Roda
-    # GET /api/v0.1/summaries/:topic_name/:catalog_name
+    # GET /summaries/:topic_name/:catalog_name
     route('summaries') do |routing|
       routing.on String, String do |topic_name, catalog_name|
         routing.get do
