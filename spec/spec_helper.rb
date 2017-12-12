@@ -4,7 +4,6 @@ require 'minitest/autorun'
 require 'minitest/rg'
 require 'watir'
 require 'headless'
-#require 'selenium-webdriver'
 
 require './init.rb'
 
