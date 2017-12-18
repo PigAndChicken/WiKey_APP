@@ -24,7 +24,7 @@ module WiKey
         all_topics = TopicsRepresenter.new(OpenStruct.new).from_json topics_json
         subjects = Views::AllSubjects.new(all_topics)
 
-        flash.now[:notice] = "Let's enter a topic to try" if subjects.any?
+        flash.now[:notice] = "Let's enter a topic to try" # if subjects.any?
 
         view 'home', locals: { home: true, subjects: subjects }
       end
