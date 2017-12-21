@@ -10,7 +10,7 @@ module WiKey
 
     def check_if_exists(topic_name)
       topic_info = ApiGateway.new.topic(topic_name)
-      if topic_info.include? 'Could not find'
+      if topic_info.message.include? 'Could not find'
         Right(topic_name) # not loaded yet, go next step to create
       else
         Left(topic_info) # out with info
@@ -19,7 +19,7 @@ module WiKey
 
     def create_topic(topic_name)
       topic_info = ApiGateway.new.create_topic(topic_name)
-      if topic_info.include? 'not found'
+      if topic_info.message.include? 'not found'
         Left(topic_info) # not exist in Wikipedia, out with error msg
       else
         Right(topic_info)

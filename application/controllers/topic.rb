@@ -6,18 +6,18 @@ module WiKey
       routing.post do
         topic_name = routing.params['topic']
 
-        result = CheckTopic.new.call(topic_name)
-        if result.value.include? 'Remote article not found'
+        result = CheckTopic.new.call(topic_name).value
+        if result.message.include? 'Remote article not found'
           flash[:error] = 'Not exists in Wikipedia'
           routing.redirect '/'
         else
-          topic_info = result.value
+          topic_info = result.message
           topic_info = ArticleRepresenter.new(OpenStruct.new)
                                          .from_json topic_info
         end
         subject_contents = Views::SubjectContents.new(topic_info)
         view 'topic_summary', locals: { home: false,
-                               subject_contents: subject_contents }
+                                        subject_contents: subject_contents }
       end
     end
   end

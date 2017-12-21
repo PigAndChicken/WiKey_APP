@@ -7,7 +7,7 @@ module WiKey
         routing.get do
           topic_info = ApiGateway.new.summaries(topic_name, catalog_name)
           topic_info = ArticleRepresenter.new(OpenStruct.new)
-                                         .from_json topic_info
+                                         .from_json topic_info.message
           subject_contents = Views::SubjectContents.new(topic_info)
 
           view 'home', locals: { home: false,
