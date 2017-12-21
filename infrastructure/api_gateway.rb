@@ -55,17 +55,15 @@ module WiKey
       call_api(:get, ['summaries', topic_name, catalog_name])
     end
 
-=begin
-# call api, get hot topics
-    def hot_topics(topics_num)
-      call_api(:get, [topics_num])
+    def hot_topics
+      call_api(:get, 'hot_topics')
     end
-=end
+
     def call_api(method, resources)
-      url_route = [@config.API_URL, resources].flatten.join'/'
+      url_route = [@config.API_HOST, @config.API_VER, resources].flatten.join'/'
 
       result = HTTP.send(method, url_route)
-      raise(ApiResponse::HTTP_STATUS[result.code]) if result.code >= 300
+      raise(HTTP_STATUS[result.code]) if result.code >= 300
       ApiResponse.new(result.code, result.to_s)
     end
   end

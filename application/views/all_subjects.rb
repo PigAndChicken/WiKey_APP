@@ -9,11 +9,11 @@ module WiKey
       def none?
         @all_topics.topics.none?
       end
-=begin
+
       def any?
         @all_topics.topics.any?
       end
-=end
+
       def collection
         @all_topics.topics.map { |topic| Subject.new(topic) }
       end

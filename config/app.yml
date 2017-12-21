@@ -1,6 +1,8 @@
 ---
 development:
-  API_URL: https://wikeyapi.herokuapp.com/api/v0.1
+  API_HOST: https://wikeyapi.herokuapp.com
+  API_VER: api/v0.1
 test:
-  API_URL: https://wikeyapi.herokuapp.com/api/v0.1
+  API_HOST: https://wikeyapi.herokuapp.com
+  API_VER: api/v0.1
   APP_URL: http://localhost:9000

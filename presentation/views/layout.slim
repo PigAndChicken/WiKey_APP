@@ -33,6 +33,21 @@ html
             h1 id='main_header'
               a href="/" style="color:#BFBFBF;" WiKey
 
+      / searching bar
+      form role="form" action="/topic" method='post' id='add-topic-form'
+        .row.vertical-align.query-bar.col-xs-12
+          .col-xs-9
+            input{
+              type='text' name='topic'
+              id='topic_input' class="form-control"
+              placeholder="Enter the topic of wikipedia here"
+            }
+          .col-xs-2
+            button{
+              type='submit' id='topic_submit' class='submit'
+              value='submit' class="btn"
+            } Search
+
       section
         include :flash_bar
         == yield

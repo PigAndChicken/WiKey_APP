@@ -5,23 +5,23 @@ module WiKey
       def initialize(topic_info)
         @topic_info = topic_info
       end
-      
+
       def topic
-        @topic_info['topic']['name']  #"topic_name"
+        @topic_info['topic']['name'] # "topic_name"
       end
-      
+
       def catalogs
-        @topic_info['catalogs'].map{ |c| c['name'] }  #[c1, c2, c3]
+        @topic_info['catalogs'].map { |c| c['name'] } # [c1, c2, c3]
       end
-      
+
       def catalog
-        @topic_info['paragraphs'][0]['catalog']  #"catalog_name"
+        @topic_info['paragraphs'][0]['catalog'] # "catalog_name"
       end
-      
+
       def summaries
-        @topic_info['paragraphs'].map { |p| p["content"] }  #[p1, p2, p3]
+        @topic_info['paragraphs'].map { |p| p['content'] } # [p1, p2, p3]
       end
-      
+
       def link_to_topic_summaries
         "/summaries/#{topic}/#{catalog}"
       end

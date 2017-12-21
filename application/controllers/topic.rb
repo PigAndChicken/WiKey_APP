@@ -16,7 +16,7 @@ module WiKey
                                          .from_json topic_info
         end
         subject_contents = Views::SubjectContents.new(topic_info)
-        view 'home', locals: { home: false,
+        view 'topic_summary', locals: { home: false,
                                subject_contents: subject_contents }
       end
     end

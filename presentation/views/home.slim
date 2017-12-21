@@ -1,4 +1,5 @@
 .container
+<!--
   / searching bar
   form role="form" action="/topic" method='post' id='add-topic-form'
     .row.vertical-align.query-bar.col-xs-12
@@ -13,25 +14,18 @@
           type='submit' id='topic_submit' class='submit'
           value='submit' class="btn"
         } Search
+-->
 
   / content body
   section
     .row
     .row
-      - if home
-        h3 id="welcome" Welcome
-      - else
-        h3 id='subtitle'
-          = subject_contents.topic
+      h3 id="welcome" Welcome
     .col-md-8
-      - if home
-        p id="introduction"
-          | WiKey is a simple tool for summarize contents of wikipedia. Let's try some topics of wikipedia!
-      - else
-        - subject_contents.summaries.each do |summary|
-           p id="summary"
-           =  summary
+      p id="introduction"
+        | WiKey is a simple tool for summarize contents of wikipedia. Let's try!
 
+<!--
   / directory
   section
     .col-md-4 id="list"
@@ -43,3 +37,4 @@
             - subject_contents.catalogs.each do |catalog|
                 div class="list-group-item"
                   a href="/summaries/#{subject_contents.topic}/#{catalog}"  #{catalog}
+-->
