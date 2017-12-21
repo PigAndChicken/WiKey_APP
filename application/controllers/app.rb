@@ -21,7 +21,8 @@ module WiKey
       # GET request
       routing.root do
         topics_json = ApiGateway.new.all_topics
-        all_topics = TopicsRepresenter.new(OpenStruct.new).from_json topics_json
+        all_topics = TopicsRepresenter.new(OpenStruct.new)
+                                      .from_json topics_json
         subjects = Views::AllSubjects.new(all_topics)
 
         flash.now[:notice] = "Let's enter a topic to try" # if subjects.any?
