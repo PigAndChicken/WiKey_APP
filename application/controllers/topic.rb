@@ -11,13 +11,14 @@ module WiKey
           flash[:error] = 'Not exists in Wikipedia'
           routing.redirect '/'
         else
-          topic_info = result.message
+          topic_info = result
           topic_info = ArticleRepresenter.new(OpenStruct.new)
-                                         .from_json topic_info
+                                         .from_json topic_info.message
+
+          subject_contents = Views::SubjectContents.new(topic_info)
+          view 'topic_summary', locals: { home: false,
+                                          subject_contents: subject_contents }
         end
-        subject_contents = Views::SubjectContents.new(topic_info)
-        view 'topic_summary', locals: { home: false,
-                                        subject_contents: subject_contents }
       end
     end
   end
