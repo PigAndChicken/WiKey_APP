@@ -7,16 +7,14 @@
     .col-md-8
       - subject_contents.summaries.each do |summary|
          p id="summary"
-         ==  summary.concat('\n')
+         =  summary
 
   / directory
   section
     .col-md-4 id="list"
       .panel-default
-    /    - unless home
-          .panel-heading id="list_title" Outline
-            div class="list-group" id="outline"
-    /          - unless home
-                - subject_contents.catalogs.each do |catalog|
-                    div class="list-group-item"
-                      a href="/summaries/#{subject_contents.topic}/#{catalog}"  #{catalog}
+        .panel-heading id="list_title" Outline
+        div class="list-group" id="outline"
+           - subject_contents.catalogs.each do |catalog|
+              div class="list-group-item"
+                a href="/summaries/#{subject_contents.topic}/#{catalog}"  #{catalog}

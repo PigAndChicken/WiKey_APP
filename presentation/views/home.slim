@@ -1,21 +1,4 @@
 .container
-<!--
-  / searching bar
-  form role="form" action="/topic" method='post' id='add-topic-form'
-    .row.vertical-align.query-bar.col-xs-12
-      .col-xs-9
-        input{
-          type='text' name='topic'
-          id='topic_input' class="form-control"
-          placeholder="Enter the topic of wikipedia here"
-        }
-      .col-xs-2
-        button{
-          type='submit' id='topic_submit' class='submit'
-          value='submit' class="btn"
-        } Search
--->
-
   / content body
   section
     .row
@@ -23,16 +6,3 @@
     .col-md-8
       p id="introduction"
         | WiKey is a simple tool for summarize contents of wikipedia. Let's try!
-
-<!--
-  / directory
-  section
-    .col-md-4 id="list"
-      .panel-default
-       - unless home
-        .panel-heading id="list_title" Outline
-        div class="list-group" id="outline"
-           - unless home
-            - subject_contents.catalogs.each do |catalog|
-                div class="list-group-item"
-                  a href="/summaries/#{subject_contents.topic}/#{catalog}"  #{catalog}
