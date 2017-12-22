@@ -13,10 +13,10 @@
   section
     .col-md-4 id="list"
       .panel-default
-        - unless home
+    /    - unless home
           .panel-heading id="list_title" Outline
             div class="list-group" id="outline"
-              - unless home
+    /          - unless home
                 - subject_contents.catalogs.each do |catalog|
                     div class="list-group-item"
                       a href="/summaries/#{subject_contents.topic}/#{catalog}"  #{catalog}
