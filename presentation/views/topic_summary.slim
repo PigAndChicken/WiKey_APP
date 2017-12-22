@@ -7,7 +7,7 @@
     .col-md-8
       - subject_contents.summaries.each do |summary|
          p id="summary"
-         =  summary
+         ==  summary.concat('\n')
 
   / directory
   section
@@ -20,4 +20,3 @@
                 - subject_contents.catalogs.each do |catalog|
                     div class="list-group-item"
                       a href="/summaries/#{subject_contents.topic}/#{catalog}"  #{catalog}
-                - end
