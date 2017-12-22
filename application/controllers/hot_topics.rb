@@ -15,7 +15,8 @@ module WiKey
           view_info[:hot_topics] = hot_topics
         end
 
-        view 'hot_topics', locals: { view_info: view_info }
+        view 'hot_topics', locals: { home: false,
+                                     view_info: view_info }
       end
     end
   end

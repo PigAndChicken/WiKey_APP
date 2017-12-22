@@ -1,14 +1,16 @@
 .container
+  - unless home
   / content body
-  section
-    .row
-      h3 id='subtitle'
+    section
+      .row
+        h3 id='subtitle'
         = subject_contents.topic
-    .col-md-8
-      - subject_contents.summaries.each do |summary|
-         p id="summary"
-         =  summary
+      .col-md-8
+        - subject_contents.summaries.each do |summary|
+           p id="summary"
+           =  summary
 
+  - unless home
   / directory
   section
     .col-md-4 id="list"
