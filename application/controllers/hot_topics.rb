@@ -7,7 +7,7 @@ module WiKey
         result = ApiGateway.new.hot_topics
         view_info = { result: result }
         if result.processing?
-          view_info[:processing] = Views::ProcessingView.new(result)
+  #        view_info[:processing] = Views::ProcessingView.new(result)
           flash.now[:notice] = 'Checking hot topics, please check back later.'
         else
           hot_topics = TopicsRepresenter.new(OpenStruct.new)
