@@ -37,6 +37,13 @@ footer {
   color: #AC9999;
 }
 
+.ubutia-card{
+	text-align: center;
+	/*margin-bottom: 45px;*/
+}
+.ubutia-card .ubutia-card-header{
+	margin-bottom: 45px;
+}
 .ubutia-card .ubutia-card-header .card-icon{
 	border-radius: 100%;
 	display: inline-block;
@@ -48,7 +55,7 @@ footer {
 
 .graphic-design{
 	background:transparent url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUPo75yHRsm6UvSENzWq-xigE-SYUcu0OWSzFKyxQoiNjRU3znLw) no-repeat;
-    width: 120px;
-    height: 120px;
+    width: 60px;
+    height: 60px;
 	display:block;
 }
