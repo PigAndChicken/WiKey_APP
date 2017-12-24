@@ -7,8 +7,7 @@ module WiKey
       end
 
       def ws_channel_id
-        '-758121688208626020'
-#        JSON.parse(@result.message)['message']['id']
+        JSON.parse(@result.message)['message']['channel']
       end
 
       def ws_host
