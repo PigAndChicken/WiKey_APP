@@ -7,13 +7,12 @@ module WiKey
       end
 
       def ws_channel_id
-        JSON.parse(@result.message)['message']['id']
+        JSON.parse(@result.message)
       end
 
       def ws_host
         App.config.API_HOST
       end
-
     end
   end
 end
