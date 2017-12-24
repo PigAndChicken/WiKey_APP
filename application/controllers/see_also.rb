@@ -3,7 +3,7 @@ module WiKey
   class App < Roda
     # GET /see_also/:topic_name
     route('see_also') do |routing|
-      routing on String do |topic_name|
+      routing.on String do |topic_name|
         routing.get do
           result = ApiGateway.new.see_also(topic_name)
           view_info = { result: result }
