@@ -25,8 +25,6 @@ module WiKey
                                       .from_json topics_json.message
         subjects = Views::AllSubjects.new(all_topics)
 
-        flash.now[:notice] = "Let's enter a topic to try" # if subjects.any?
-
         view 'home', locals: { home: true, subjects: subjects }
       end
 
