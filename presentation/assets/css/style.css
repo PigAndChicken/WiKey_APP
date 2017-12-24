@@ -11,14 +11,6 @@
   text-align: center;
 }
 
-#introduction {
-  text-align: center;
-}
-
-h4 {
-  color: #C1C1C1;
-}
-
 .query-bar {
   background-color: #FFFFE6;
   padding: 20px 20px 20px 20px;
@@ -28,12 +20,6 @@ h4 {
   color: #FFFFFF;
   background-color: #C1C1C1;
 }
-/*
-#content_block {
-  float: left;
-  padding: 20px;
-}
-*/
 
 #list {
   float: right;
