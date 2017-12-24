@@ -1,3 +1,4 @@
+=begin
 module WiKey
   # Web App
   class App < Roda
@@ -20,3 +21,4 @@ module WiKey
     end
   end
 end
+=end

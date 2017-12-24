@@ -63,7 +63,6 @@ module WiKey
       url_route = [@config.API_HOST, @config.API_VER, resources].flatten.join'/'
 
       result = HTTP.send(method, url_route)
-      raise(HTTP_STATUS[result.code]) if result.code >= 300
       ApiResponse.new(result.code, result.to_s)
     end
   end
