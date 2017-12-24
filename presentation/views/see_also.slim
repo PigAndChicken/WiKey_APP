@@ -13,8 +13,8 @@
         var client = new Faye.Client("#{processing.ws_host}/faye");
         var bar = document.getElementsByClassName("progress-bar")[0];
         var reg = /\:(\d+)%/
+        console.log(result.message);
         client.subscribe('/' + channel, function(message) {
-          console.log(result.message);
           console.log(message);
           // Collect progressbar element and percentage
           var progress = bar.getAttribute("style")
