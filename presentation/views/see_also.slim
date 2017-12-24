@@ -3,6 +3,9 @@
     .row
       h3 id='subtitle' See also
     - if result.processing?
+      = result
+
+<!--
       .progress
         .progress-bar.progress-bar-info.progress-bar-striped.active[
           role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"
@@ -47,7 +50,7 @@
 
 
 
-    <!--
+
       .col-sm-4
         .ubutia-card
           .ubutia-card-header

@@ -1,3 +1,4 @@
+=begin
 module WiKey
   module Views
     # view object for process bar information
@@ -16,3 +17,4 @@ module WiKey
     end
   end
 end
+=end

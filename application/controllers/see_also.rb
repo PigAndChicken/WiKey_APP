@@ -8,7 +8,7 @@ module WiKey
           result = ApiGateway.new.see_also(topic_name)
           view_info = { result: result }
           if result.processing?
-            view_info[:processing] = Views::ProcessingView.new(result)
+    #        view_info[:processing] = Views::ProcessingView.new(result)
             flash.now[:notice] = 'Checking hot topics, please check back later.'
           else
             see_also = TopicsRepresenter.new(OpenStruct.new)
