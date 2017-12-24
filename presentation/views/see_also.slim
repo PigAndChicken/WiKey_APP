@@ -2,14 +2,14 @@
   section
     .row
       h3 id='subtitle' See also
+      p
+        = result.message
     - if result.processing?
       .progress
         .progress-bar.progress-bar-info.progress-bar-striped.active[
           role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"
           style="width:0%"]
       script src = "#{processing.ws_host}/faye.js"
-      = result.message
-      = result
       javascript:
         var channel = "#{processing.ws_channel_id}";
         var client = new Faye.Client("#{processing.ws_host}/faye");
@@ -44,3 +44,6 @@
             }
           }
         })
+        p
+          = result.message
+          = result
