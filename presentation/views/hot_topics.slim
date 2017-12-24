@@ -2,7 +2,8 @@
   section
     .row
       h3 id='subtitle' Hot Topics
-    - if result.processing?
+<!--
+    - if view_info[:result].processing?
       .progress
         .progress-bar.progress-bar-striped.active[
           role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
