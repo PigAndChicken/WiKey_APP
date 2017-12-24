@@ -24,10 +24,17 @@
           }
         })
     - else
+      - see_also_names.each do |topic_name|
+        .button
+          .btn.btn-link topic_name
+
+
+
+    <!--
       .col-sm-4
         .ubutia-card
           .ubutia-card-header
             .card-icon
               span class="graphic-design" aria-hidden="true"
           .ubutia-card-content
-            h3 top1
+            h3 top1 >
