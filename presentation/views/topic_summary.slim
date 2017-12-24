@@ -14,7 +14,9 @@
     .col-md-4 id="list"
       .panel-default
         .panel-heading id="list_title" Outline
-        div class="list-group" id="outline"
-           - subject_contents.catalogs.each do |catalog|
+        div class="list-group"
+          - subject_contents.catalogs[0...-1].each do |catalog|
               div class="list-group-item"
                 a href="/summaries/#{subject_contents.topic}/#{catalog}"  #{catalog}
+          div class="list-group-item"
+            a href="/see_also/#{subject_contents.topic}" See also

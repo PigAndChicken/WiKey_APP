@@ -55,6 +55,10 @@ module WiKey
       call_api(:get, ['summaries', topic_name, catalog_name])
     end
 
+    def see_also(topic_name)
+      call_api(:get, ['see_also', topic_name])
+    end
+
     def hot_topics
       call_api(:get, 'hot_topics')
     end
