@@ -25,7 +25,7 @@ module WiKey
                                       .from_json topics_json.message
         subjects = Views::AllSubjects.new(all_topics)
 
-        view 'home', locals: { home: true, subjects: subjects }
+        view 'home', locals: { subjects: subjects }
       end
 
       routing.on do
