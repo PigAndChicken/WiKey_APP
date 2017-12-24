@@ -52,6 +52,9 @@ footer {
 	line-height: 120px;
 	position: relative;
 }
+.ubutia-card .ubutia-card-content h3:after{
+	top: 40px;
+}
 
 .graphic-design{
 	background:transparent url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUPo75yHRsm6UvSENzWq-xigE-SYUcu0OWSzFKyxQoiNjRU3znLw) no-repeat;
