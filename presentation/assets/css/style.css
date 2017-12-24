@@ -36,3 +36,19 @@ footer {
   font-size: 11px;
   color: #AC9999;
 }
+
+.ubutia-card .ubutia-card-header .card-icon{
+	border-radius: 100%;
+	display: inline-block;
+	height: 120px;
+	width: 120px;
+	line-height: 120px;
+	position: relative;
+}
+
+.graphic-design{
+	background:transparent url(https://scrambledeggsdotorg.files.wordpress.com/2012/04/one.png) no-repeat;
+    width: 120px;
+    height: 120px;
+	display:block;
+}
