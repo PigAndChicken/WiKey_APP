@@ -1,4 +1,3 @@
-=begin
 module WiKey
   module Views
     # view object for process bar information
@@ -8,7 +7,8 @@ module WiKey
       end
 
       def ws_channel_id
-        JSON.parse(@result.message)['message']['id']
+        "-758121688208626020"
+#        JSON.parse(@result.message)['message']['id']
       end
 
       def ws_host
@@ -17,4 +17,3 @@ module WiKey
     end
   end
 end
-=end
