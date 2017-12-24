@@ -16,7 +16,7 @@ module WiKey
             view_info[:see_also] = see_also
           end
 
-          view 'see_also', locals: view_info
+          view 'see_also', locals: { view_info: view_info }
         end
       end
     end
