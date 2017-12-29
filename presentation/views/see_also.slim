@@ -39,7 +39,7 @@
           }
         })
     - else
-      - see_also_names.each do |topic_name|
+      - see_also.topics.map(&:name).each do |topic_name|
         .button
           .btn.btn-link
             a href="https://wikeyapp.herokuapp.com/topic/#{topic_name}" #{topic_name}
