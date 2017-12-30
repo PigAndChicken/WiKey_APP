@@ -15,8 +15,9 @@
       .panel-default
         .panel-heading id="list_title" Outline
         div class="list-group"
-          - subject_contents.catalogs[0...-1].each do |catalog|
-              div class="list-group-item"
-                a href="/summaries/#{subject_contents.topic}/#{catalog}"  #{catalog}
-          div class="list-group-item"
-            a href="/see_also/#{subject_contents.topic}" See also
+          - subject_contents.catalogs.each do |catalog|
+            div class="list-group-item"
+              - if catalog=="See also"
+                 a href="/see_also/#{subject_contents.topic}" See also
+              - else
+                 a href="/summaries/#{subject_contents.topic}/#{catalog}"  #{catalog}
