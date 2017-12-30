@@ -4,7 +4,7 @@ module WiKey
     # GET or POST /topic
     route('topic') do |routing|
       routing.post do
-        topic_name = routing.params['topic']
+        topic_name = Forms::InputReg.call(routing.params)
 
         result = CheckTopic.new.call(topic_name).value
         if result.message.include? 'Remote article not found'
