@@ -1,4 +1,3 @@
-=begin
 module WiKey
   # Web App
   class App < Roda
@@ -11,9 +10,8 @@ module WiKey
             flash[:error] = 'Not exists in Wikipedia'
             routing.redirect '/'
           else
-            topic_info = result
             topic_info = ArticleRepresenter.new(OpenStruct.new)
-                                           .from_json topic_info.message
+                                           .from_json result.message
 
             subject_contents = Views::SubjectContents.new(topic_info)
             view 'topic_summary', locals: { subject_contents: subject_contents }
@@ -23,4 +21,3 @@ module WiKey
     end
   end
 end
-=end
