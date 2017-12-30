@@ -30,7 +30,7 @@ module WiKey
                                            .from_json result.message
 
             subject_contents = Views::SubjectContents.new(topic_info)
-            view 'topic_summary', locals: { subject_contents: subject_contents }
+            view 'topic_summary_2', locals: { subject_contents: subject_contents }
           end
         end
       end
