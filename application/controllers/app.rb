@@ -16,7 +16,6 @@ module WiKey
     require_relative 'topic'
     require_relative 'hot_topics'
     require_relative 'see_also'
-    require_relative 'connect_topic_summary'
 
     route do |routing|
       routing.assets
