@@ -13,7 +13,7 @@ module WiKey
           else
             see_also = TopicsRepresenter.new(OpenStruct.new)
                                         .from_json result.message
-            if see_also.topics==nil
+            if see_also.topics.nil?
               view_info[:no_see_also] = true
             else
               view_info[:see_also] = see_also
