@@ -9,7 +9,7 @@ module WiKey
           view_info = { result: result }
           if result.processing?
             view_info[:processing] = Views::ProcessingView.new(result)
-            flash.now[:notice] = 'Checking hot topics, please check back later.'
+            flash.now[:notice] = 'Checking recommended topics, please wait.'
           else
             see_also = TopicsRepresenter.new(OpenStruct.new)
                                         .from_json result.message
