@@ -14,8 +14,7 @@ module WiKey
             see_also = TopicsRepresenter.new(OpenStruct.new)
                                         .from_json result.message
             view_info[:see_also] = see_also
-            see_also_names = see_also.topics.map(&:name)
-            view_info[:see_also_names] = see_also_names
+            view_info[:see_also_names] = see_also.topics.map(&:name)
           end
 
           view 'see_also', locals: view_info
