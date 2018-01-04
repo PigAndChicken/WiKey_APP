@@ -2,22 +2,51 @@
   / content body
   section
     .row
-      h3 id='subtitle'
-      = subject_contents.topic
-    .col-md-8
-      - subject_contents.summaries.each do |summary|
-          p id="summary"
-          =  summary
+      h3 id="subtitle"
+        = subject_contents.topic
+    .row
+      h3 id="catalog_title"
+        = subject_contents.current_catalog
+    .col-md-8 id="summaries"
+       - subject_contents.summaries.each do |summary|
+          p
+            = summary
 
   / directory
   section
     .col-md-4 id="list"
       .panel-default
         .panel-heading id="list_title" Outline
-        div class="list-group"
+        div class="list-group" id="outline"
           - subject_contents.catalogs.each do |catalog|
-            div class="list-group-item"
+            button type="button" class="list-group-item list-group-item-action"
               - if catalog=="See also"
-                 a href="/see_also/#{subject_contents.topic}" See also
+                  a href="/see_also/#{subject_contents.topic}" id="See_also" See also
               - else
-                 a href="/summaries/#{subject_contents.topic}/#{catalog}"  #{catalog}
+                  a href="/summaries/#{subject_contents.topic}/#{catalog}" id="#{catalog.gsub(' ', '_')}" #{catalog}
+        javascript:
+          catalog_id = "#{subject_contents.catalog_id}"
+          $("#"+catalog_id).css('color','#59462D');
+          $("#"+catalog_id).css('font-weight','bold');
+
+
+  / original paragraphs
+  section
+    .row
+    .row
+    - if topic_page==false
+        .button
+          .btn.btn-xs id="origin_btn" role="button" Original version
+        javascript:
+            $(function() {
+              $("#origin_version").hide();
+              $("#origin_btn").on("click",function(e) {
+                e.preventDefault();
+                $("#origin_version").show();
+              });
+            });
+        .row
+        .col-md-8 id="origin_version" style="background-color:#EEEEEE;"
+          - origin_contents.origin_paragraphs.each do |paragraph|
+              p
+                = paragraph

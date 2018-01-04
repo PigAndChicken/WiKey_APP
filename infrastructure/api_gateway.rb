@@ -55,6 +55,10 @@ module WiKey
       call_api(:get, ['summaries', topic_name, catalog_name])
     end
 
+    def paragraphs(topic_name, catalog_name)
+      call_api(:get, ['paragraphs', topic_name, catalog_name])
+    end
+
     def see_also(topic_name)
       call_api(:get, ['see_also', topic_name])
     end

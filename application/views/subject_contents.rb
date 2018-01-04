@@ -14,6 +14,14 @@ module WiKey
         @topic_info['catalogs'].map { |c| c['name'] } # [c1, c2, c3]
       end
 
+      def catalog_id
+        @topic_info['paragraphs'][0]['catalog'].gsub(" ", "_")
+      end
+
+      def current_catalog
+        @topic_info['paragraphs'][0]['catalog']
+      end
+
       def summaries
         @topic_info['paragraphs'].map { |p| p['content'] } # [p1, p2, p3]
       end

@@ -2,15 +2,6 @@
   font-weight: bold;
 }
 
-#subtitle {
-  color: #AC9999;
-}
-
-#welcome {
-  color: #AC9999;
-  text-align: center;
-}
-
 .query-bar {
   background-color: #FFFFE6;
   padding: 20px 20px 20px 20px;
@@ -21,13 +12,35 @@
   background-color: #C1C1C1;
 }
 
-#list {
-  float: right;
-  padding-right: 25px;
+#welcome {
+  color: #AC9999;
+  text-align: center;
 }
 
-a {
+#subtitle {
   color: #AC9999;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#catalog_title {
+  color: #59462D;
+  font-size: 16px;
+}
+
+#summaries {
+  background-color: #C7F0E6;
+  padding: 20px 10px;
+  border-radius: 5px;
+}
+
+#list {
+  float: right;
+  padding-right: 20px;
+}
+
+#see_also {
+  background-color: blue;
 }
 
 footer {
