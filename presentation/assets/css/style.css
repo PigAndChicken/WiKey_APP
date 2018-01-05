@@ -1,5 +1,7 @@
 #main_header {
   font-weight: bold;
+  font-size: 40px;
+  color:#595959;
 }
 
 .query-bar {
@@ -19,6 +21,10 @@
 
 #hot_topics_btn {
   padding: 6px 4px;
+  color: #FFFFFF;
+}
+
+#hot_topic_link {
   color: #FFFFFF;
 }
 
