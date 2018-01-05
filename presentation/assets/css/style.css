@@ -29,14 +29,23 @@
 }
 
 #summaries {
-  background-color: #C7F0E6;
   padding: 20px 10px;
   border-radius: 5px;
+}
+
+#origin_version {
+  padding: 20px 10px;
+  border-radius: 5px;
+  background-color:#EEEEEE;
 }
 
 #list {
   float: right;
   padding-right: 20px;
+}
+
+.list-group .list-group-item {
+  color: #AC9999;
 }
 
 #see_also {
