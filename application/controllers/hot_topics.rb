@@ -7,7 +7,7 @@ module WiKey
         result = ApiGateway.new.hot_topics
         hot_topics = TopicsRepresenter.new(OpenStruct.new)
                                       .from_json result.message
-        hot_topics = Views::SubjectContents.new(hot_topics)
+        hot_topics = Views::HotTopics.new(hot_topics)
 
         view 'hot_topics', locals: { hot_topics: hot_topics }
       end
