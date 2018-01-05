@@ -17,15 +17,15 @@
   text-align: center;
 }
 
-#subtitle {
-  color: #AC9999;
-  font-size: 20px;
-  font-weight: bold;
+#hot_topics_btn {
+  padding: 6px 4px;
+  color: #FFFFFF;
 }
 
-#catalog_title {
+#subtitle {
   color: #59462D;
-  font-size: 16px;
+  font-size: 23px;
+  font-weight: bold;
 }
 
 #summaries {
@@ -36,7 +36,7 @@
 #origin_version {
   padding: 20px 10px;
   border-radius: 5px;
-  background-color:#EEEEEE;
+  background-color: #EEEEEE;
 }
 
 #list {
@@ -44,7 +44,7 @@
   padding-right: 20px;
 }
 
-.list-group .list-group-item {
+button {
   color: #AC9999;
 }
 

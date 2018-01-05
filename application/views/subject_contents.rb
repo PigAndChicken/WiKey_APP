@@ -15,7 +15,7 @@ module WiKey
       end
 
       def catalog_id
-        @topic_info['paragraphs'][0]['catalog'].gsub(" ", "_")
+        @topic_info['paragraphs'][0]['catalog'].tr(' ', '_')
       end
 
       def current_catalog

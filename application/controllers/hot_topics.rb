@@ -5,17 +5,11 @@ module WiKey
     route('hot_topics') do |routing|
       routing.get do
         result = ApiGateway.new.hot_topics
-        view_info = { result: result }
-        if result.processing?
-  #        view_info[:processing] = Views::ProcessingView.new(result)
-          flash.now[:notice] = 'Checking hot topics, please check back later.'
-        else
-          hot_topics = TopicsRepresenter.new(OpenStruct.new)
-                                        .from_json result.message
-          view_info[:hot_topics] = hot_topics
-        end
+        hot_topics = TopicsRepresenter.new(OpenStruct.new)
+                                      .from_json result.message
+        hot_topics = Views::SubjectContents.new(hot_topics)
 
-        view 'hot_topics', locals: { view_info: view_info }
+        view 'hot_topics', locals: { hot_topics: hot_topics }
       end
     end
   end
