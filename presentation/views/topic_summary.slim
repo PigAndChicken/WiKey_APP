@@ -37,11 +37,18 @@
         .button
           .btn.btn-xs id="origin_btn" role="button" Original version
         javascript:
+            var hide = true;
             $(function() {
               $("#origin_version").hide();
               $("#origin_btn").on("click",function(e) {
                 e.preventDefault();
-                $("#origin_version").show();
+                if (hide == true) {
+                  $("#origin_version").show();
+                  hide = false;
+                } else {
+                  $("#origin_version").hide();
+                  hide = true;
+                }
               });
             });
         .row

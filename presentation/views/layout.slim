@@ -28,26 +28,26 @@ html
 
     .container id="html_body"
       section
-        .row style="vertical-align: middle;"
-          .col-xs-12
+        .row
+          .col-xs-11
             h1
               a href="/" id="main_header" WiKey
 
-      section
+      section style="text-align: center;"
         include :flash_bar
         / searching bar
         form role="form" action="/topic" method='post' id='add-topic-form'
-          .row.vertical-align.query-bar.col-xs-12 style="border-radius: 10px;"
-            .col-xs-9
+          .row.vertical-align.query-bar.col-xs-13 style="border-radius: 10px;"
+            .col-xs-10
               input{
-                type='text' name='topic'
-                id='topic_input' class="form-control"
+                type='text' name='topic' style="width: 100%;"
+                id='input_bar' class="form-control"
                 placeholder="Enter the topic of wikipedia here"
               }
             .col-xs-2
               button{
-                type='submit' id='topic_submit' class='submit'
-                value='submit' class="btn"
+                type='submit' id='btn_submit' class='submit'
+                value='submit' class="btn" style="width: 100%;"
               } Search
 
       section
