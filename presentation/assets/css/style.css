@@ -61,10 +61,13 @@
 }
 
 #relative_links {
-  color: #A39191 !important;
   background-color: #EEE;
   border-radius: 15px;
   margin-bottom: 8px;
+}
+
+.button .btn.btn-block a {
+  color: #877676;
 }
 
 button {
