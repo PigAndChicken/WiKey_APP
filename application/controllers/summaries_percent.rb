@@ -6,8 +6,8 @@ module WiKey
       routing.on String, String, Integer do |topic_name, catalog_name, percentage|
         routing.get do
           topic_info = ApiGateway.new.summaries_percent(topic_name, catalog_name, percentage)
-          topic_info = WiKey::ArticleRepresenter.new(OpenStruct.new)
-                                                .from_json topic_info.message
+          topic_info = ArticleRepresenter.new(OpenStruct.new)
+                                         .from_json topic_info.message
           subject_contents = Views::SubjectContents.new(topic_info)
 
           content = subject_contents.summaries.to_s

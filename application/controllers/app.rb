@@ -12,7 +12,6 @@ module WiKey
     plugin :flash
     use Rack::Session::Cookie, secret: config.SESSION_SECRET
 
-    require_relative 'summaries'
     require_relative 'topic'
     require_relative 'hot_topics'
     require_relative 'see_also'
