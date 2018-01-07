@@ -1,7 +1,7 @@
 module WiKey
   module Forms
     InputReg = Dry::Validation.Form do
-      INPUT_REGEX = /^[a-zA-Z0-9]+(.*[a-zA-Z0-9])$/
+      INPUT_REGEX = /^[a-zA-Z0-9]/
 
       required(:topic).filled(format?: INPUT_REGEX)
 
