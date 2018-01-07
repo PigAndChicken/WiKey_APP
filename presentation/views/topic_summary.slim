@@ -60,7 +60,6 @@
       $(".catalogs").css('font-weight', 'normal');
     }
     var get_content = function(topic_name, catalog_name, percentage){
-      show_img();
       $.get('https://wikeyapp.herokuapp.com/summaries_percent/'+topic_name+'/'+catalog_name+'/'+percentage, function(content){
         console.log(content);
         content = JSON.parse(content);
@@ -75,6 +74,7 @@
 
     $("#choose_percentage").change(function(){
       $("#summaries").empty();
+      show_img();
       percentage = $("option:selected", this).val();
       get_content(topic_name, catalog_name, percentage);
     })
@@ -82,6 +82,7 @@
       console.log('clicked');
       $("#summaries").empty();
       $("#subtitle").empty();
+      show_img();
       reset_color();
       console.log('reset');
       catalog_name = $(this).attr('id');
