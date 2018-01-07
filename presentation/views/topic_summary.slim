@@ -22,7 +22,7 @@
         option value="100" original
 
     .col-md-8 id="summaries"
-       image#loading src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" style="display: none;"
+       image#loading src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"
        - subject_contents.summaries.each do |summary|
           p
             = summary
@@ -50,9 +50,11 @@
     $("#Default").css('font-weight','bold');
     var show_img = function(){
       $("#loading").show();
+      console.log('show');
     }
     var hide_img = function(){
       $("#loading").hide();
+      console.log('hide');
     }
 
     var reset_color = function(){
@@ -60,7 +62,6 @@
       $(".catalogs").css('font-weight', 'normal');
     }
     var get_content = function(topic_name, catalog_name, percentage){
-
       $.get('https://wikeyapp.herokuapp.com/summaries_percent/'+topic_name+'/'+catalog_name+'/'+percentage, function(content){
         console.log(content);
         content = JSON.parse(content);
