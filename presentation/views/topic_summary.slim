@@ -53,7 +53,7 @@
       $(".catalogs").css('font-weight', 'normal');
     }
     var get_content = function(topic_name, catalog_name, percentage){
-      $.get('summaries_percent/'+topic_name+'/'+catalog_name+'/'+percentage, function(content){
+      $.get('https://wikeyapp.herokuapp.com/summaries_percent/'+topic_name+'/'+catalog_name+'/'+percentage, function(content){
         console.log(content);
         content = JSON.parse(content);
         console.log(content);
