@@ -22,7 +22,7 @@
         option value="100" original
 
     .col-md-8
-       img#loading src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" style="display: none;"
+       image#loading src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" style="display: none;"
        .summaries id="summaries"
          - subject_contents.summaries.each do |summary|
             p
@@ -52,11 +52,11 @@
     var show_img = function(){
       $("#loading").show();
       console.log('show');
-    }
+    };
     var hide_img = function(){
       $("#loading").hide();
       console.log('hide');
-    }
+    };
 
     var reset_color = function(){
       $(".catalogs").css('color', '#AC9999');
