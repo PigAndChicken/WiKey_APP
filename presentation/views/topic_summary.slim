@@ -22,11 +22,11 @@
         option value="100" original
 
     .col-md-8
-       image#loading src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" style="display: none;"
-       .summaries id="summaries"
-         - subject_contents.summaries.each do |summary|
-            p
-              = summary
+      image#loading src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" style="display: none;"
+      #summaries
+        - subject_contents.summaries.each do |summary|
+          p
+            = summary
 
 
   / directory
