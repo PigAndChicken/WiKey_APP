@@ -21,11 +21,12 @@
         option value="90" 90%
         option value="100" original
 
-    .col-md-8 id="summaries"
-       img id="loading" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" style="display: none;"
-       - subject_contents.summaries.each do |summary|
-          p
-            = summary
+    .col-md-8
+       img#loading src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" style="display: none;"
+       .summaries id="summaries"
+         - subject_contents.summaries.each do |summary|
+            p
+              = summary
 
 
   / directory
