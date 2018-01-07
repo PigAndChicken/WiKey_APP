@@ -42,7 +42,8 @@
       p
         | No recommended resources here.
     - else
-      - see_also_names.each do |topic_name|
-         .button
-          .btn.btn-link
+      .col-md-8 style="text-align: center;"
+        - see_also_names.each do |topic_name|
+         .button type="button"
+          .btn.btn-block id="btn_see_also"
             a href="https://wikeyapp.herokuapp.com/summaries/#{topic_name}/default" #{topic_name}

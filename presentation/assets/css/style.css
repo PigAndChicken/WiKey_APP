@@ -60,6 +60,13 @@
   padding-right: 20px;
 }
 
+#btn_see_also {
+  color: #FFFFE6 !important;
+  background-color: #EEE;
+  border-radius: 25px;
+  margin-bottom: 8px;
+}
+
 button {
   color: #AC9999;
 }
