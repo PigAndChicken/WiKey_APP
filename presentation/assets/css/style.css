@@ -68,7 +68,7 @@
 }
 
 .button .btn.btn-block a {
-  color: #877676;
+  color: #877676 !important;
 }
 
 button {
