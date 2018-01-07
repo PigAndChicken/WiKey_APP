@@ -6,10 +6,27 @@
         = subject_contents.topic
         |&nbsp-&nbsp
         = subject_contents.current_catalog
+
+    .col-auto.my-1
+      label class="mr-sm-2" Percentage of original article
+      .row
+      select class="custom-select mr-sm-2" id="choose_percentage"
+        option value="50" 50%
+        option value="10" 10%
+        option value="20" 20%
+        option value="30" 30%
+        option value="40" 40%
+        option value="60" 60%
+        option value="70" 70%
+        option value="80" 80%
+        option value="90" 90%
+        option value="100" 100%
+
     .col-md-8 id="summaries"
        - subject_contents.summaries.each do |summary|
           p
             = summary
+
 
   / directory
   section
@@ -23,36 +40,44 @@
                 - if catalog=="See also"
                    a href="/see_also/#{subject_contents.topic}" id="See_also" style="color: #AC9999;" See also
                 - else
-                   a href="/summaries/#{subject_contents.topic}/#{catalog}" id="#{catalog.tr(' ', '_')}" style="color: #AC9999;" #{catalog}
-        javascript:
-          catalog_id = "#{subject_contents.catalog_id}"
-          $("#"+catalog_id).css('color','#59462D');
-          $("#"+catalog_id).css('font-weight','bold');
+                   a class="catalogs" id="#{catalog.tr(' ', '_')}" href="#" style="color: #AC9999;" #{catalog}
 
+  javascript:
+    var percentage = 50;
+    var topic_name = "#{subject_contents.topic}";
+    var catalog_name = "Default";
+    $("#Default").css('color','#59462D');
+    $("#Default").css('font-weight','bold');
+    $("#choose_percentage").change(function(){
+      $("#summaries").empty();
+      percentage = $("option:selected", this).val();
+      $.get('summaries_percent/'+topic_name+'/'+catalog_name+'/'+percentage, function(content){
+        content = JSON.parse(content);
+        for (i = 0; i < content.length; i++) {
+          $("#summaries").append("<p> "+content[i] + "</p>");
+        }
+      });
+    })
 
-  / original paragraphs
-  section
-    .row
-    .row
-        .button
-          .btn.btn-xs id="origin_btn" role="button" Original version
-        javascript:
-            var hide = true;
-            $(function() {
-              $("#origin_version").hide();
-              $("#origin_btn").on("click",function(e) {
-                e.preventDefault();
-                if (hide == true) {
-                  $("#origin_version").show();
-                  hide = false;
-                } else {
-                  $("#origin_version").hide();
-                  hide = true;
-                }
-              });
-            });
-        .row
-        .col-md-8 id="origin_version"
-          - origin_contents.origin_paragraphs.each do |paragraph|
-              p
-                = paragraph
+    var get_content = function(topic_name, catalog_name){
+      $.get('summaries/'+topic_name+'/'+catalog_name, function(summaries){
+        summaries = JSON.parse(summaries);
+        console.log(summaries);
+        for (i = 0; i < summaries.length; i++) {
+          $("#summaries").append("<p> "+summaries[i] + "</p>");
+        }
+      })
+    }
+    var reset_color = function(){
+      $(".catalogs").css('color', '#AC9999');
+      $(".catalogs").css('font-weight','normal');
+    }
+    $(".catalogs").click(function(){
+      $("#summaries").empty();
+      $("#subtitle").empty();
+      reset_color();
+      catalog_name = $(this).attr('id');
+      get_content(topic_name, catalog_name);
+      $("#"+catalog_name).css('color','#59462D');
+      $("#"+catalog_name).css('font-weight','bold');
+    })

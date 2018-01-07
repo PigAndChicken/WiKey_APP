@@ -55,6 +55,10 @@ module WiKey
       call_api(:get, ['summaries', topic_name, catalog_name])
     end
 
+    def summaries_percent(topic_name, catalog_name, percentage)
+       call_api(:get, ['summaries_percent', topic_name, catalog_name, percentage])
+    end
+
     def paragraphs(topic_name, catalog_name)
       call_api(:get, ['paragraphs', topic_name, catalog_name])
     end
