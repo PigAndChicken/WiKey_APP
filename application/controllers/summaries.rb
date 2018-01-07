@@ -16,8 +16,7 @@ module WiKey
           origin_contents = Views::OriginContents.new(origin_info)
 
           view 'topic_summary', locals: { subject_contents: subject_contents,
-                                          origin_contents: origin_contents,
-                                          topic_page: false }
+                                          origin_contents: origin_contents }
         end
       end
     end
