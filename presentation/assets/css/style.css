@@ -26,16 +26,20 @@
 }
 
 #welcome {
-  color: #AC9999;
+  color: #877676;
+  margin-top: 40px;
+  padding-bottom: 10px;
+}
+
+#introduction {
+  margin-bottom: 50px;
 }
 
 #hot_topics_btn {
-  padding: 6px 4px;
+  padding: 30px 8px;
   color: #FFFFFF;
-}
-
-#hot_topic_link {
-  color: #FFFFFF;
+  font-size: 13px;
+  margin-bottom: 15px;
 }
 
 #subtitle {

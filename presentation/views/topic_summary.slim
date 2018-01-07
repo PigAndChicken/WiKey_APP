@@ -18,11 +18,12 @@
         .panel-heading id="list_title" Outline
         div class="list-group" id="outline"
           - subject_contents.catalogs.each do |catalog|
-            button type="button" class="list-group-item list-group-item-action"
-              - if catalog=="See also"
-                  a href="/see_also/#{subject_contents.topic}" id="See_also" style="color: #AC9999;" See also
-              - else
-                  a href="/summaries/#{subject_contents.topic}/#{catalog}" id="#{catalog.tr(' ', '_')}" style="color: #AC9999;" #{catalog}
+            - unless catalog=="Notes" || catalog=="References"
+              button type="button" class="list-group-item list-group-item-action"
+                - if catalog=="See also"
+                   a href="/see_also/#{subject_contents.topic}" id="See_also" style="color: #AC9999;" See also
+                - else
+                   a href="/summaries/#{subject_contents.topic}/#{catalog}" id="#{catalog.tr(' ', '_')}" style="color: #AC9999;" #{catalog}
         javascript:
           catalog_id = "#{subject_contents.catalog_id}"
           $("#"+catalog_id).css('color','#59462D');
